@@ -1,0 +1,14 @@
+{
+  "name": "bemyfarm-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev":    "wrangler dev --local",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply bemyfarm-db",
+    "db:seed":    "wrangler d1 execute bemyfarm-db --file=migrations/seed.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

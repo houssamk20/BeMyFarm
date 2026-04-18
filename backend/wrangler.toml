@@ -1,0 +1,25 @@
+name = "bemyfarm-api"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ── D1 Database ──────────────────────────────────────────────
+[[d1_databases]]
+binding  = "DB"
+database_name = "bemyfarm-db"
+database_id   = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+# ── KV Namespace (cache for weather / AI results) ────────────
+[[kv_namespaces]]
+binding    = "CACHE"
+id         = "REPLACE_WITH_YOUR_KV_ID"
+preview_id = "REPLACE_WITH_YOUR_KV_PREVIEW_ID"
+
+# ── Environment variables ─────────────────────────────────────
+[vars]
+ENVIRONMENT       = "production"
+CORS_ORIGIN       = "https://bemyfarm.pages.dev"   # update to your Pages domain
+
+# Secrets (set via: wrangler secret put SECRET_NAME)
+# OPENWEATHER_API_KEY
+# AI_API_KEY
